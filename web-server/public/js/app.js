@@ -1,0 +1,1 @@
+console.log('Client sde javascript file is loaded!')
