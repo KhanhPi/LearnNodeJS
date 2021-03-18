@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Test NodeJS</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/app.js"></script>
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    
 </head>
 <body>
 
     {{>header}}
     <h1>{{title}}</h1>
+    <form>
+        <input placeholder="Please input" />
+        <input type="button" name="Search" value="Search" />
+    </form>
     <p>Create by {{name}}</p>
     {{>footer}}
+    <script src="../../public/js/app.js"></script>
 </body>
+
 </html>

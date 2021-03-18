@@ -1,5 +1,5 @@
 const express = require('express')
-const path = require('path') 
+const path = require('path')
 const hbs = require('hbs')
 
 const app = express()
@@ -11,7 +11,7 @@ const partialPath = path.join(__dirname, '../templates/partials')
 
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
-hbs.registerPartials(partialPath)
+hbs.registerPartials(partialPath) 
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -20,13 +20,27 @@ app.get('', (req, res) => {
     })
 })
 
-
-app.get('/help', (req, res) => { 
+app.get('/help', (req, res) => {
     res.send({
-        name: 'KhanhPi', 
+        name: 'KhanhPi',
         age: 25
     })
 })
+
+app.get('/products', (req, res) => {
+    if(!req.query.search) {
+        res.send( {
+            error: "You must provide a search term"
+        })
+    }
+
+    console.log(req.query.search)
+    
+    res.send({
+        products: []
+    })
+})
+
 
 app.get('/about', (req, res) => {
     let a = 'String con'
